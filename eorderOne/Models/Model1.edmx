@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="empresaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="mlinea">
+          <Key>
+            <PropertyRef Name="ID_EMPRESA" />
+            <PropertyRef Name="ID_LOCAL" />
+            <PropertyRef Name="ID_LINEA" />
+          </Key>
+          <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_LOCAL" Type="int" Nullable="false" />
+          <Property Name="ID_LINEA" Type="int" Nullable="false" />
+          <Property Name="LINEA" Type="varchar" MaxLength="18" />
+          <Property Name="W_ORDEN" Type="int" />
+        </EntityType>
+        <EntityType Name="mlocal">
+          <Key>
+            <PropertyRef Name="ID_EMPRESA" />
+            <PropertyRef Name="ID_LOCAL" />
+            <PropertyRef Name="W_CLAVE_EMP" />
+          </Key>
+          <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_LOCAL" Type="int" Nullable="false" />
+          <Property Name="ACTIVA" Type="int" />
+          <Property Name="RAZON_SOCIAL" Type="varchar" MaxLength="100" />
+          <Property Name="RFC" Type="varchar" MaxLength="20" />
+          <Property Name="W_CLAVE_EMP" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="W_NOMBRE" Type="varchar" MaxLength="100" />
+          <Property Name="W_DESCRIPCION" Type="varchar" MaxLength="255" />
+          <Property Name="W_LOGO" Type="varchar" MaxLength="500" />
+          <Property Name="W_IMG_BODY" Type="varchar" MaxLength="500" />
+          <Property Name="W_COLOR_BODY" Type="varchar" MaxLength="25" />
+          <Property Name="W_COLOR_TEXT" Type="varchar" MaxLength="25" />
+          <Property Name="W_LINK_FACEBOOK" Type="varchar" MaxLength="500" />
+          <Property Name="W_LINK_TWITTER" Type="varchar" MaxLength="500" />
+          <Property Name="W_LINK_GOOGLEPLUS" Type="varchar" MaxLength="500" />
+          <Property Name="W_LINK_PINTEREST" Type="varchar" MaxLength="500" />
+          <Property Name="W_LINK_INSTAGRAM" Type="varchar" MaxLength="500" />
+          <Property Name="W_LINK_OTRO_A" Type="varchar" MaxLength="500" />
+          <Property Name="W_LINK_OTRO_B" Type="varchar" MaxLength="500" />
+          <Property Name="W_SUBDOMAIN" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="mpro">
+          <Key>
+            <PropertyRef Name="ID_EMPRESA" />
+            <PropertyRef Name="ID_LOCAL" />
+            <PropertyRef Name="ID_PRO" />
+          </Key>
+          <Property Name="ID_EMPRESA" Type="int" Nullable="false" />
+          <Property Name="ID_LOCAL" Type="int" Nullable="false" />
+          <Property Name="ID_PRO" Type="int" Nullable="false" />
+          <Property Name="TIPO" Type="int" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="200" />
+          <Property Name="CLAVE" Type="varchar" MaxLength="15" />
+          <Property Name="ID_LINEA" Type="int" />
+          <Property Name="ID_GRUPO" Type="int" />
+          <Property Name="ID_INS" Type="int" />
+          <Property Name="OCULTO" Type="int" />
+          <Property Name="DISPONIBLE" Type="int" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+          <Property Name="PRECIO_A" Type="float" />
+          <Property Name="PRECIO_B" Type="float" />
+          <Property Name="PRECIO_C" Type="float" />
+          <Property Name="BLOQUEO" Type="int" />
+          <Property Name="COSTO" Type="float" />
+          <Property Name="IMAGEN" Type="varchar" MaxLength="2000" />
+          <Property Name="ID_MOD" Type="int" />
+          <Property Name="FSIZE" Type="int" />
+          <Property Name="IVA_T" Type="varchar" MaxLength="5" />
+          <Property Name="MPROCLAVE" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityContainer Name="empresaModelStoreContainer">
+          <EntitySet Name="mlinea" EntityType="Self.mlinea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mlocal" EntityType="Self.mlocal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mpro" EntityType="Self.mpro" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="empresaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="mlinea">
+          <Key>
+            <PropertyRef Name="ID_EMPRESA" />
+            <PropertyRef Name="ID_LOCAL" />
+            <PropertyRef Name="ID_LINEA" />
+          </Key>
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_LOCAL" Type="Int32" Nullable="false" />
+          <Property Name="ID_LINEA" Type="Int32" Nullable="false" />
+          <Property Name="LINEA" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="W_ORDEN" Type="Int32" />
+        </EntityType>
+        <EntityType Name="mlocal">
+          <Key>
+            <PropertyRef Name="ID_EMPRESA" />
+            <PropertyRef Name="ID_LOCAL" />
+            <PropertyRef Name="W_CLAVE_EMP" />
+          </Key>
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_LOCAL" Type="Int32" Nullable="false" />
+          <Property Name="ACTIVA" Type="Int32" />
+          <Property Name="RAZON_SOCIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RFC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="W_CLAVE_EMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="W_NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="W_DESCRIPCION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="W_LOGO" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_IMG_BODY" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_COLOR_BODY" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="W_COLOR_TEXT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="W_LINK_FACEBOOK" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_LINK_TWITTER" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_LINK_GOOGLEPLUS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_LINK_PINTEREST" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_LINK_INSTAGRAM" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_LINK_OTRO_A" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_LINK_OTRO_B" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="W_SUBDOMAIN" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mpro">
+          <Key>
+            <PropertyRef Name="ID_EMPRESA" />
+            <PropertyRef Name="ID_LOCAL" />
+            <PropertyRef Name="ID_PRO" />
+          </Key>
+          <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="ID_LOCAL" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRO" Type="Int32" Nullable="false" />
+          <Property Name="TIPO" Type="Int32" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CLAVE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ID_LINEA" Type="Int32" />
+          <Property Name="ID_GRUPO" Type="Int32" />
+          <Property Name="ID_INS" Type="Int32" />
+          <Property Name="OCULTO" Type="Int32" />
+          <Property Name="DISPONIBLE" Type="Int32" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PRECIO_A" Type="Double" />
+          <Property Name="PRECIO_B" Type="Double" />
+          <Property Name="PRECIO_C" Type="Double" />
+          <Property Name="BLOQUEO" Type="Int32" />
+          <Property Name="COSTO" Type="Double" />
+          <Property Name="IMAGEN" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="ID_MOD" Type="Int32" />
+          <Property Name="FSIZE" Type="Int32" />
+          <Property Name="IVA_T" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="MPROCLAVE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="empresaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mlinea" EntityType="Self.mlinea" />
+          <EntitySet Name="mlocal" EntityType="Self.mlocal" />
+          <EntitySet Name="mpro" EntityType="Self.mpro" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="empresaModelStoreContainer" CdmEntityContainer="empresaEntities">
+          <EntitySetMapping Name="mlinea">
+            <EntityTypeMapping TypeName="empresaModel.mlinea">
+              <MappingFragment StoreEntitySet="mlinea">
+                <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+                <ScalarProperty Name="ID_LOCAL" ColumnName="ID_LOCAL" />
+                <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+                <ScalarProperty Name="LINEA" ColumnName="LINEA" />
+                <ScalarProperty Name="W_ORDEN" ColumnName="W_ORDEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mlocal">
+            <EntityTypeMapping TypeName="empresaModel.mlocal">
+              <MappingFragment StoreEntitySet="mlocal">
+                <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+                <ScalarProperty Name="ID_LOCAL" ColumnName="ID_LOCAL" />
+                <ScalarProperty Name="ACTIVA" ColumnName="ACTIVA" />
+                <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="W_CLAVE_EMP" ColumnName="W_CLAVE_EMP" />
+                <ScalarProperty Name="W_NOMBRE" ColumnName="W_NOMBRE" />
+                <ScalarProperty Name="W_DESCRIPCION" ColumnName="W_DESCRIPCION" />
+                <ScalarProperty Name="W_LOGO" ColumnName="W_LOGO" />
+                <ScalarProperty Name="W_IMG_BODY" ColumnName="W_IMG_BODY" />
+                <ScalarProperty Name="W_COLOR_BODY" ColumnName="W_COLOR_BODY" />
+                <ScalarProperty Name="W_COLOR_TEXT" ColumnName="W_COLOR_TEXT" />
+                <ScalarProperty Name="W_LINK_FACEBOOK" ColumnName="W_LINK_FACEBOOK" />
+                <ScalarProperty Name="W_LINK_TWITTER" ColumnName="W_LINK_TWITTER" />
+                <ScalarProperty Name="W_LINK_GOOGLEPLUS" ColumnName="W_LINK_GOOGLEPLUS" />
+                <ScalarProperty Name="W_LINK_PINTEREST" ColumnName="W_LINK_PINTEREST" />
+                <ScalarProperty Name="W_LINK_INSTAGRAM" ColumnName="W_LINK_INSTAGRAM" />
+                <ScalarProperty Name="W_LINK_OTRO_A" ColumnName="W_LINK_OTRO_A" />
+                <ScalarProperty Name="W_LINK_OTRO_B" ColumnName="W_LINK_OTRO_B" />
+                <ScalarProperty Name="W_SUBDOMAIN" ColumnName="W_SUBDOMAIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mpro">
+            <EntityTypeMapping TypeName="empresaModel.mpro">
+              <MappingFragment StoreEntitySet="mpro">
+                <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+                <ScalarProperty Name="ID_LOCAL" ColumnName="ID_LOCAL" />
+                <ScalarProperty Name="ID_PRO" ColumnName="ID_PRO" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="CLAVE" ColumnName="CLAVE" />
+                <ScalarProperty Name="ID_LINEA" ColumnName="ID_LINEA" />
+                <ScalarProperty Name="ID_GRUPO" ColumnName="ID_GRUPO" />
+                <ScalarProperty Name="ID_INS" ColumnName="ID_INS" />
+                <ScalarProperty Name="OCULTO" ColumnName="OCULTO" />
+                <ScalarProperty Name="DISPONIBLE" ColumnName="DISPONIBLE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="PRECIO_A" ColumnName="PRECIO_A" />
+                <ScalarProperty Name="PRECIO_B" ColumnName="PRECIO_B" />
+                <ScalarProperty Name="PRECIO_C" ColumnName="PRECIO_C" />
+                <ScalarProperty Name="BLOQUEO" ColumnName="BLOQUEO" />
+                <ScalarProperty Name="COSTO" ColumnName="COSTO" />
+                <ScalarProperty Name="IMAGEN" ColumnName="IMAGEN" />
+                <ScalarProperty Name="ID_MOD" ColumnName="ID_MOD" />
+                <ScalarProperty Name="FSIZE" ColumnName="FSIZE" />
+                <ScalarProperty Name="IVA_T" ColumnName="IVA_T" />
+                <ScalarProperty Name="MPROCLAVE" ColumnName="MPROCLAVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

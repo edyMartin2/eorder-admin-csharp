@@ -1,0 +1,30 @@
+﻿@model eorderOne.Models.ViewModels.tableMlineaViewModel
+@{
+    ViewBag.Title = "Newproduct";
+}
+
+<h2>Newproduct</h2>
+
+@using (Html.BeginForm("Addlines", "Home", FormMethod.Post))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.LabelFor(d => d.ID_EMPRESA)
+                @Html.TextBoxFor(d => d.ID_EMPRESA, "", new { @class = "form-control" })
+
+                @Html.LabelFor(d => d.ID_LOCAL)
+                @Html.TextBoxFor(d => d.ID_LOCAL, "", new { @class = "form-control" })
+
+                @Html.LabelFor(d => d.ID_LINEA)
+                @Html.TextBoxFor(d => d.ID_LINEA, "", new { @class = "form-control" })
+
+                @Html.LabelFor(d => d.linea)
+                @Html.TextBoxFor(d => d.linea, "", new { @class = "form-control" })
+                <br />
+                <input type="submit" value="Add" class="btn btn-success"/>
+            </div>
+        </div>
+    </div>
+
+}
